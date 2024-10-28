@@ -8,7 +8,12 @@ const Layout = () => {
       <Box>
         <Navbar />
       </Box>
-      <Box display="flex" justifyContent="center">
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        height="90vh"
+      >
         <Outlet />
       </Box>
     </Box>
