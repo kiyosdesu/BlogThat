@@ -1,4 +1,4 @@
-import { Box, Show } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 
@@ -12,7 +12,7 @@ const Layout = () => {
         display="flex"
         justifyContent="center"
         alignItems="center"
-        height="90vh"
+        height="100vh"
       >
         <Outlet />
       </Box>

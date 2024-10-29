@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Link, Text } from "@chakra-ui/react";
 import ColorModeSwitch from "./ColorModeSwitch";
 
 const Navbar = () => {
@@ -16,11 +16,15 @@ const Navbar = () => {
       alignItems="center"
     >
       <Box>
-        <Text fontSize="5xl">BlogThat</Text>
+        <Link href="/" _selected={{ border: "none" }}>
+          <Text fontSize="5xl">BlogThat</Text>
+        </Link>
       </Box>
       <Box display="flex" gap="7" alignItems="center">
         {navItems.map((items) => (
-          <Text fontWeight={items.id === 3 ? "bold" : ""}> {items.word}</Text>
+          <Link href="/signInPage">
+            <Text fontWeight={items.id === 3 ? "bold" : ""}> {items.word}</Text>
+          </Link>
         ))}
         <ColorModeSwitch />
       </Box>
