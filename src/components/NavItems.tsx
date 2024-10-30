@@ -19,7 +19,13 @@ const NavItems = () => {
           _selected={{ border: "none" }}
           _focus={{ boxShadow: "none", border: "none", outline: "none" }}
         >
-          <Text fontWeight={items.id === 3 ? "bold" : ""}> {items.word}</Text>
+          <Text
+            fontWeight={items.id === 3 ? "bold" : ""}
+            fontSize={{ base: "2xl", md: "md" }}
+          >
+            {" "}
+            {items.word}
+          </Text>
         </Link>
       ))}
     </Box>
