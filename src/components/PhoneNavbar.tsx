@@ -1,4 +1,4 @@
-import { Box, HStack, Kbd } from "@chakra-ui/react";
+import { Box, HStack } from "@chakra-ui/react";
 import {
   DrawerActionTrigger,
   DrawerBackdrop,
