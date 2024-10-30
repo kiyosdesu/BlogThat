@@ -34,7 +34,7 @@ const SignInPage = () => {
         minWidth="30vw"
         padding="5"
         width={{ base: "100vw", md: "30vw" }}
-        height={{ base: "100vh", md: "35vh" }}
+        minHeight={{ base: "100vh", md: "35vh" }}
         alignItems="center"
         justifyContent="center"
       >
