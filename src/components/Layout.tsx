@@ -5,9 +5,10 @@ import Navbar from "./Navbar";
 const Layout = () => {
   return (
     <Box>
-      <Box hideBelow="sm">
+      <Box>
         <Navbar />
       </Box>
+
       <Box
         display="flex"
         justifyContent="center"
