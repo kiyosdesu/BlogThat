@@ -28,7 +28,7 @@ const PhoneNavbar = () => {
       <Box>
         {" "}
         <HStack wrap="wrap">
-          <DrawerRoot placement="start">
+          <DrawerRoot placement="start" size="full">
             <DrawerBackdrop />
             <DrawerTrigger asChild>
               <Button variant="outline" size="sm">
@@ -42,7 +42,9 @@ const PhoneNavbar = () => {
                 </DrawerTitle>
               </DrawerHeader>
               <DrawerBody>
-                <NavItems />
+                <DrawerActionTrigger asChild>
+                  <NavItems />
+                </DrawerActionTrigger>
               </DrawerBody>
               <DrawerFooter>
                 <DrawerActionTrigger asChild>
