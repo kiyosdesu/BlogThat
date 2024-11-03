@@ -3,6 +3,7 @@ import SignInPage from "./components/SignInPage";
 import SignUpPage from "./components/SignUpPage";
 import Layout from "./components/Layout";
 import HomePage from "./components/HomePage";
+import BlogPage from "./components/BlogContainer";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "sign-in", element: <SignInPage /> },
       { path: "sign-up", element: <SignUpPage /> },
+      { path: "blogs", element: <BlogPage /> },
     ],
   },
 ]);

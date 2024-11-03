@@ -4,7 +4,7 @@ const NavItems = () => {
   const navItems = [
     { word: "Write", id: 1 },
     { word: "Sign in", id: 2, link: "sign-in" },
-    { word: "Get Started", id: 3 },
+    { word: "Get Started", id: 3, link: "blogs" },
   ];
   return (
     <Box
