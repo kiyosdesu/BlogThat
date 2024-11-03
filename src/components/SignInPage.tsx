@@ -69,7 +69,7 @@ const SignInPage = () => {
         </Button>
         <Text>
           Dont have an account?{" "}
-          <Link href="/signUpPage" variant="underline">
+          <Link href="/sign-up" variant="underline">
             <Span color="blue">Sign up</Span>
           </Link>
         </Text>

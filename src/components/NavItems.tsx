@@ -3,8 +3,8 @@ import { Box, Text, Link } from "@chakra-ui/react";
 const NavItems = () => {
   const navItems = [
     { word: "Write", id: 1 },
-    { word: "Sign in", id: 2, link: "signInPage" },
-    { word: "Get Started", id: 3, link: "blogsPage" },
+    { word: "Sign in", id: 2, link: "sign-in" },
+    { word: "Get Started", id: 3 },
   ];
   return (
     <Box
@@ -15,7 +15,7 @@ const NavItems = () => {
       {navItems.map((items) => (
         <Link
           variant={{ base: "underline", md: "plain" }}
-          href="/signInPage"
+          href={items.link}
           _selected={{ border: "none" }}
           _focus={{ boxShadow: "none", border: "none", outline: "none" }}
         >

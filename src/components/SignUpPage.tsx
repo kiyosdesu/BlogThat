@@ -77,7 +77,7 @@ const SignUpPage = () => {
         </Button>
         <Text>
           Already have an account?{" "}
-          <Link href="/signInPage" variant="underline">
+          <Link href="sign-in" variant="underline">
             <Span color="blue">Sign in</Span>
           </Link>
         </Text>
