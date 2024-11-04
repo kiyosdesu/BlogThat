@@ -3,7 +3,7 @@ import SignInPage from "./components/SignInPage";
 import SignUpPage from "./components/SignUpPage";
 import Layout from "./components/Layout";
 import HomePage from "./components/HomePage";
-import BlogPage from "./components/BlogContainer";
+import BlogPage from "./components/BlogPage";
 
 const router = createBrowserRouter([
   {

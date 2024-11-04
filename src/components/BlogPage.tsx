@@ -3,7 +3,7 @@ import BlogContainer from "./BlogContainer";
 
 const BlogPage = () => {
   return (
-    <VStack bg="blue" height="100vh" width="100vw">
+    <VStack height="100vh" width="100vw">
       <BlogContainer />
     </VStack>
   );
