@@ -1,6 +1,6 @@
-import { VStack, Image, Card, Button, Text, HStack } from "@chakra-ui/react";
+import { VStack, Image, Text, HStack } from "@chakra-ui/react";
 import image from "../image/blogitcard/apocalypse.webp";
-import { FaRegThumbsUp, FaRegCommentAlt } from "react-icons/fa";
+// import { FaRegThumbsUp, FaRegCommentAlt } from "react-icons/fa";
 
 const BlogCard = () => {
   const imahe =
