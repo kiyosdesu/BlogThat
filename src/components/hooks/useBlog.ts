@@ -1,6 +1,7 @@
 import fetcher from "@/util/fetcher";
 import { useQuery } from "@tanstack/react-query";
-type Blog = {
+
+interface Blog {
   id: string;
   authorId: string;
   authorUsername: string;
@@ -12,18 +13,22 @@ type Blog = {
   createdAt: Date;
   updatedAt: Date;
   likeCount: number;
-};
+}
 
-type GetBlogResponseType = {
+interface GetBlogResponseType {
   blog: Blog[];
-  cursor: string | null; // Pass this to pagination (or next page)
-};
+  cursor: string | null;
+}
 
 const useBlog = () => {
   const { isLoading, data, error } = useQuery({
     queryKey: ["blog"],
-    queryFn: async () => await fetcher<GetBlogResponseType[]>("/blog"),
+    queryFn: async () => {
+      const response = await fetcher<GetBlogResponseType>("/blog");
+      return response?.data;
+    },
   });
+  return { isLoading, data, error };
 };
 
 export default useBlog;
