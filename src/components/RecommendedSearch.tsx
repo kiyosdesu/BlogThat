@@ -33,7 +33,7 @@ const RecommendedSearch = () => {
         alignItems="center"
       >
         {arr.map((item, ind) => (
-          <Text key={ind} fontSize="3xl">
+          <Text key={ind} fontSize="3xl" paddingX="2">
             {item}
           </Text>
         ))}

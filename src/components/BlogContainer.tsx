@@ -1,11 +1,21 @@
-import { VStack } from "@chakra-ui/react";
+import { Box, HStack } from "@chakra-ui/react";
 import BlogCard from "./BlogCard";
 
 const BlogContainer = () => {
   return (
-    <VStack>
-      <BlogCard />
-    </VStack>
+    <Box marginY="8vh">
+      <HStack flexWrap="wrap" justify="center">
+        <BlogCard />
+        <BlogCard />
+        <BlogCard />
+        <BlogCard />
+        <BlogCard />
+        <BlogCard />
+        <BlogCard />
+        <BlogCard />
+        <BlogCard />
+      </HStack>
+    </Box>
   );
 };
 
