@@ -4,6 +4,7 @@ import SignUpPage from "./components/SignUpPage";
 import Layout from "./components/Layout";
 import HomePage from "./components/HomePage";
 import BlogPage from "./components/BlogPage";
+import Dawg from "./components/Dawg";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
       { path: "sign-up", element: <SignUpPage /> },
       { path: "blogs", element: <BlogPage /> },
     ],
+  },
+  {
+    path: "homePage2",
+    element: <Dawg />,
   },
 ]);
 

@@ -14,14 +14,18 @@ import {
 import { Button } from "./ui/button";
 import TItle from "./TItle";
 import NavItems from "./NavItems";
+import { useColorMode } from "./ui/color-mode";
 
 const PhoneNavbar = () => {
+  const theme = useColorMode();
   return (
     <Box
       display="flex"
       justifyContent="space-around"
       alignItems="center"
-      borderBottom="2px white solid"
+      borderBottom={
+        theme.colorMode === "light" ? "2px white solid" : "2px black solid"
+      }
       minHeight="10vh"
     >
       <TItle />

@@ -2,7 +2,7 @@ import { Box, Text, Link } from "@chakra-ui/react";
 
 const NavItems = () => {
   const navItems = [
-    { word: "Write", id: 1 },
+    { word: "Write", id: 1, link: "HomePage2" },
     { word: "Sign in", id: 2, link: "sign-in" },
     { word: "Get Started", id: 3, link: "blogs" },
   ];
