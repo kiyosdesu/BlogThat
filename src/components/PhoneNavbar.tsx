@@ -15,6 +15,7 @@ import { Button } from "./ui/button";
 import TItle from "./TItle";
 import NavItems from "./NavItems";
 import { useColorMode } from "./ui/color-mode";
+import ColorModeSwitch from "./ColorModeSwitch";
 
 const PhoneNavbar = () => {
   const theme = useColorMode();
@@ -41,8 +42,9 @@ const PhoneNavbar = () => {
             </DrawerTrigger>
             <DrawerContent>
               <DrawerHeader>
-                <DrawerTitle>
+                <DrawerTitle display="flex" gap="5">
                   <TItle />
+                  <ColorModeSwitch />
                 </DrawerTitle>
               </DrawerHeader>
               <DrawerBody>
@@ -52,9 +54,8 @@ const PhoneNavbar = () => {
               </DrawerBody>
               <DrawerFooter>
                 <DrawerActionTrigger asChild>
-                  <Button variant="outline">Cancel</Button>
+                  <Button variant="outline"></Button>
                 </DrawerActionTrigger>
-                <Button>Save</Button>
               </DrawerFooter>
               <DrawerCloseTrigger />
             </DrawerContent>

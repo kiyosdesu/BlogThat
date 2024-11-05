@@ -9,7 +9,7 @@ const NavItems = () => {
   return (
     <Box
       display="flex"
-      gap={{ base: "3.5", md: "7" }}
+      gap={{ base: "5", md: "7" }}
       flexDirection={{ base: "column", md: "row" }}
     >
       {navItems.map((items) => (
