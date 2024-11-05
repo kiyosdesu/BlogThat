@@ -18,6 +18,7 @@ const NavItems = () => {
           href={items.link}
           _selected={{ border: "none" }}
           _focus={{ boxShadow: "none", border: "none", outline: "none" }}
+          key={items.id}
         >
           <Text
             fontWeight={items.id === 3 ? "bold" : ""}

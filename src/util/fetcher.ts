@@ -1,4 +1,4 @@
-const backEndUrl = "blogthat-backend.vercel.app";
+const backEndUrl = "https://blogthat-backend.vercel.app";
 interface FetcherResponse<T> {
   msg: string;
   status: "success";
