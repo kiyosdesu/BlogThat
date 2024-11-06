@@ -7,11 +7,13 @@ const Layout = () => {
 
   return (
     <Box>
-      <Box>
+      <Box hideFrom="md">
         {location.pathname !== "/sign-in" &&
           location.pathname !== "/sign-up" && <Navbar />}
       </Box>
-
+      <Box hideBelow="md">
+        <Navbar />
+      </Box>
       <Box
         display="flex"
         justifyContent="center"
