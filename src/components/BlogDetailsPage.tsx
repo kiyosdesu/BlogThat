@@ -1,6 +1,7 @@
-import { VStack, Text, HStack, Image } from "@chakra-ui/react";
+import { VStack, Text, HStack, Image, Box } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import useBlogDetails from "./hooks/useBlogDetails";
+import image from "../image/blogitcard/apocalypse.webp";
 
 const BlogDetailsPage = () => {
   const imahe =
@@ -10,19 +11,40 @@ const BlogDetailsPage = () => {
   const { data } = useBlogDetails(id);
 
   return (
-    <VStack>
+    <Box
+      display="flex"
+      flexDirection="column"
+      gap="7"
+      overflow="hidden"
+      padding={{ base: "7", md: "0" }}
+      marginTop={{ base: "12vh", md: "-30vh" }}
+    >
       <Text fontSize="5xl" fontWeight="extrabold">
         {data?.title}
       </Text>
-      <Text fontWeight="light">{data?.description}</Text>
-      <HStack>
-        <Image src={imahe} boxSize="30px" fit="cover" borderRadius="full" />
+      <Text fontWeight="light" fontSize="2xl">
+        {data?.description}
+      </Text>
+      <HStack gap="5">
+        <Image
+          src={imahe}
+          boxSize={{ base: "40px", md: "56px" }}
+          fit="cover"
+          borderRadius="full"
+        />
         <VStack>
-          <Text>{data?.authorUsername}</Text>
+          <Text alignSelf="start">{data?.authorUsername}</Text>
+          {data?.createdAt.toString()}
           {}
         </VStack>
       </HStack>
-    </VStack>
+      <Image
+        src={image}
+        maxHeight="550px"
+        maxWidth="550px"
+        // padding={{ base: "7px", md: " 0" }}
+      />
+    </Box>
   );
 };
 

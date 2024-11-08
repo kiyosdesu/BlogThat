@@ -4,7 +4,6 @@ import Navbar from "./Navbar";
 
 const Layout = () => {
   const location = useLocation();
-
   return (
     <Box>
       <Box hideFrom="md">
