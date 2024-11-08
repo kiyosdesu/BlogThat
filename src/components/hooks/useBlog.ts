@@ -1,7 +1,7 @@
 import fetcher from "@/util/fetcher";
 import { useQuery } from "@tanstack/react-query";
 
-interface Blog {
+export interface Blog {
   id: string;
   authorId: string;
   authorUsername: string;
