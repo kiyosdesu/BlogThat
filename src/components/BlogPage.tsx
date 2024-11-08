@@ -4,7 +4,7 @@ import BlogContainer from "./BlogContainer";
 
 const BlogPage = () => {
   return (
-    <VStack height="100vh" maxWidth="90vw">
+    <VStack height="100vh" maxWidth="100vw">
       {/* <RecommendedSearch /> */}
       <BlogContainer />
     </VStack>

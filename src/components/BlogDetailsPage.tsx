@@ -20,6 +20,9 @@ const BlogDetailsPage = () => {
       padding={{ base: "7", md: "0" }}
       marginTop={{ base: "50vh", md: "-30vh" }}
     >
+      <Box>
+        <Text fontWeight="medium">Category: {data?.category}</Text>
+      </Box>
       <Text fontSize="5xl" fontWeight="extrabold">
         {data?.title}
       </Text>
