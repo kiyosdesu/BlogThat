@@ -2,7 +2,7 @@ import { Box, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 const NavItems = () => {
   const navItems = [
-    { word: "Write", id: 1, link: "HomePage2" },
+    { word: "Write", id: 1, link: "" },
     { word: "Sign in", id: 2, link: "sign-in" },
     { word: "Get Started", id: 3, link: "blogs" },
   ];

@@ -2,6 +2,7 @@ import { VStack, Text, HStack, Image, Box } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import useBlogDetails from "./hooks/useBlogDetails";
 import image from "../image/blogitcard/apocalypse.webp";
+import LikesComments from "./LikesComments";
 
 const BlogDetailsPage = () => {
   const imahe =
@@ -17,7 +18,7 @@ const BlogDetailsPage = () => {
       gap="7"
       overflow="hidden"
       padding={{ base: "7", md: "0" }}
-      marginTop={{ base: "30vh", md: "-30vh" }}
+      marginTop={{ base: "50vh", md: "-30vh" }}
     >
       <Text fontSize="5xl" fontWeight="extrabold">
         {data?.title}
@@ -35,9 +36,9 @@ const BlogDetailsPage = () => {
         <VStack>
           <Text alignSelf="start">{data?.authorUsername}</Text>
           {data?.createdAt.toString()}
-          {}
         </VStack>
       </HStack>
+      <LikesComments likesCount={data?.likeCount} commentCount={69} />
       <Image
         src={image}
         maxHeight="550px"

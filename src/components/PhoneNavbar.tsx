@@ -1,4 +1,4 @@
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, HStack, useDisclosure } from "@chakra-ui/react";
 import {
   DrawerActionTrigger,
   DrawerBackdrop,
@@ -19,6 +19,7 @@ import ColorModeSwitch from "./ColorModeSwitch";
 import { FaHamburger } from "react-icons/fa";
 
 const PhoneNavbar = () => {
+  const { onClose } = useDisclosure();
   const theme = useColorMode();
   return (
     <Box
@@ -53,7 +54,9 @@ const PhoneNavbar = () => {
               </DrawerHeader>
               <DrawerBody>
                 <DrawerActionTrigger asChild>
-                  <NavItems />
+                  <Box onClick={onClose}>
+                    <NavItems />
+                  </Box>
                 </DrawerActionTrigger>
               </DrawerBody>
               <DrawerFooter>
