@@ -8,7 +8,7 @@ const TItle = () => {
         _selected={{ border: "none" }}
         _focus={{ boxShadow: "none", border: "none", outline: "none" }}
       >
-        <Text fontSize={{ base: "2xl", md: "5xl" }}>BlogThat</Text>
+        <Text fontSize={{ base: "3xl", md: "5xl" }}>BlogThat</Text>
       </Link>
     </Box>
   );

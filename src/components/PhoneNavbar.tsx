@@ -23,14 +23,17 @@ const PhoneNavbar = () => {
   return (
     <Box
       display="flex"
-      justifyContent="space-around"
+      justifyContent="space-between"
+      paddingX="5"
       alignItems="center"
       borderBottom={
         theme.colorMode === "light" ? "2px white solid" : "2px black solid"
       }
       minHeight="10vh"
     >
-      <TItle />
+      <Box>
+        <TItle />
+      </Box>
       <Box>
         {" "}
         <HStack wrap="wrap">
