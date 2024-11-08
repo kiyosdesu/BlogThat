@@ -16,6 +16,7 @@ import TItle from "./TItle";
 import NavItems from "./NavItems";
 import { useColorMode } from "./ui/color-mode";
 import ColorModeSwitch from "./ColorModeSwitch";
+import { FaHamburger } from "react-icons/fa";
 
 const PhoneNavbar = () => {
   const theme = useColorMode();
@@ -36,9 +37,9 @@ const PhoneNavbar = () => {
           <DrawerRoot placement="start" size="full">
             <DrawerBackdrop />
             <DrawerTrigger asChild>
-              <Button variant="outline" size="sm">
-                Open
-              </Button>
+              {/* <Button variant="outline" size="sm"> */}
+              <FaHamburger />
+              {/* </Button> */}
             </DrawerTrigger>
             <DrawerContent>
               <DrawerHeader>
