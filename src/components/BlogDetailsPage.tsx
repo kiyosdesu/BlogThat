@@ -17,7 +17,7 @@ const BlogDetailsPage = () => {
       gap="7"
       overflow="hidden"
       padding={{ base: "7", md: "0" }}
-      marginTop={{ base: "12vh", md: "-30vh" }}
+      marginTop={{ base: "30vh", md: "-30vh" }}
     >
       <Text fontSize="5xl" fontWeight="extrabold">
         {data?.title}
@@ -44,6 +44,7 @@ const BlogDetailsPage = () => {
         maxWidth="550px"
         // padding={{ base: "7px", md: " 0" }}
       />
+      {data?.body}
     </Box>
   );
 };

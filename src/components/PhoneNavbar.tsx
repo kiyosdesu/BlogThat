@@ -11,7 +11,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Button } from "./ui/button";
+// import { Button } from "./ui/button";
 import TItle from "./TItle";
 import NavItems from "./NavItems";
 import { useColorMode } from "./ui/color-mode";
@@ -57,9 +57,9 @@ const PhoneNavbar = () => {
                 </DrawerActionTrigger>
               </DrawerBody>
               <DrawerFooter>
-                <DrawerActionTrigger asChild>
+                {/* <DrawerActionTrigger asChild>
                   <Button variant="outline"></Button>
-                </DrawerActionTrigger>
+                </DrawerActionTrigger> */}
               </DrawerFooter>
               <DrawerCloseTrigger />
             </DrawerContent>

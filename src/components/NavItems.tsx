@@ -1,5 +1,5 @@
-import { Box, Text, Link } from "@chakra-ui/react";
-
+import { Box, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 const NavItems = () => {
   const navItems = [
     { word: "Write", id: 1, link: "HomePage2" },
@@ -14,15 +14,17 @@ const NavItems = () => {
     >
       {navItems.map((items) => (
         <Link
-          variant={{ base: "underline", md: "plain" }}
-          href={items.link}
-          _selected={{ border: "none" }}
-          _focus={{ boxShadow: "none", border: "none", outline: "none" }}
+          to={items.link}
+          // variant={{ base: "underline", md: "plain" }}
+          // href={items.link}
+          // _selected={{ border: "none" }}
+          // _focus={{ boxShadow: "none", border: "none", outline: "none" }}
           key={items.id}
         >
           <Text
             fontWeight={items.id === 3 ? "bold" : ""}
             fontSize={{ base: "2xl", md: "md" }}
+            textDecoration="underline"
           >
             {" "}
             {items.word}
