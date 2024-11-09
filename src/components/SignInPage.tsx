@@ -3,8 +3,28 @@ import { Field } from "@/components/ui/field";
 import { PasswordInput } from "./ui/password-input";
 import { useColorMode } from "./ui/color-mode";
 import { IoMdClose } from "react-icons/io";
+import { useForm, FieldValues } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const schema = z.object({
+  email: z.string().min(3),
+  password: z.string().min(8),
+});
+
+type FormData = z.infer<typeof schema>;
 
 const SignInPage = () => {
+  const {
+    register,
+    handleSubmit,
+    // formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(schema),
+  });
+
+  const onSubmit = (data: FieldValues) => console.log(data);
+
   const { colorMode } = useColorMode();
   const logIn = [{ type: "email", placeholder: "Example@mail.com" }];
 
@@ -53,20 +73,34 @@ const SignInPage = () => {
         <Box position="relative" top="-10">
           <Text fontSize="3xl">Welcome back!</Text>
         </Box>
-        {logIn.map((item) => (
-          <Field label={item.type} required>
-            <Input placeholder={item.placeholder} size="lg" />
-          </Field>
-        ))}
-        {passLogin.map((item) => (
-          <Field label={item.type} required>
-            <PasswordInput placeholder={item.placeholder} size="lg" />
-          </Field>
-        ))}
-
-        <Button margin="5">
-          <Text>Sign in</Text>
-        </Button>
+        <form action="" onSubmit={handleSubmit(onSubmit)}>
+          <VStack>
+            {logIn.map((item, ind) => (
+              <Field label={item.type} required key={ind}>
+                <Input
+                  placeholder={item.placeholder}
+                  {...register("email")}
+                  size="lg"
+                />
+              </Field>
+            ))}
+            {passLogin.map((item, ind) => (
+              <Field label={item.type} required key={ind}>
+                <PasswordInput
+                  placeholder={item.placeholder}
+                  {...register("password")}
+                  size="lg"
+                />
+                <Text color="red" fontVariant="common-ligatures">
+                  password must be atleast 8 characters
+                </Text>
+              </Field>
+            ))}
+            <Button margin="5">
+              <input type="submit" value="Sign in" />
+            </Button>
+          </VStack>
+        </form>
         <Text>
           Dont have an account?{" "}
           <Link href="/sign-up" variant="underline">
