@@ -18,7 +18,7 @@ const BlogDetailsPage = () => {
       gap="7"
       overflow="hidden"
       padding={{ base: "7", md: "0" }}
-      marginTop={{ base: "50vh", md: "-30vh" }}
+      marginTop={{ base: "50vh", md: "40vh" }}
     >
       <Box>
         <Text fontWeight="medium">Category: {data?.category}</Text>
