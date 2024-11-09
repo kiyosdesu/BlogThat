@@ -6,6 +6,7 @@ import HomePage from "./components/HomePage";
 import BlogPage from "./components/BlogPage";
 import Dawg from "./components/Dawg";
 import BlogDetailsPage from "./components/BlogDetailsPage";
+import BlogDetailsSkeleton from "./components/BlogDetailsSkeleton";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,8 @@ const router = createBrowserRouter([
       { path: "sign-in", element: <SignInPage /> },
       { path: "sign-up", element: <SignUpPage /> },
       { path: "blogs/:id", element: <BlogDetailsPage /> },
+      ,
+      { path: "ga", element: <BlogDetailsSkeleton /> },
     ],
   },
   {
