@@ -3,21 +3,38 @@ import { Field } from "@/components/ui/field";
 import { PasswordInput } from "./ui/password-input";
 import { useColorMode } from "./ui/color-mode";
 import { IoMdClose } from "react-icons/io";
+import { useForm, FieldValues } from "react-hook-form";
 
 const SignUpPage = () => {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data: FieldValues) => console.log(data);
+
   const { colorMode } = useColorMode();
   const logIn = [
     {
       type: "username",
       placeholder: "Username",
       required: "required",
+      reactForm: { ...register("username") },
     },
-    { type: "email", placeholder: "Example@mail.com" },
+    {
+      type: "email",
+      placeholder: "Example@mail.com",
+      reactForm: { ...register("email") },
+    },
   ];
 
   const passLogin = [
-    { type: "password", placeholder: "password" },
-    { type: "confirm password", placeholder: "confirm password" },
+    {
+      type: "password",
+      placeholder: "password",
+      reactForm: { ...register("password") },
+    },
+    {
+      type: "confirm password",
+      placeholder: "confirm password",
+      reactForm: { ...register("confirmPassword") },
+    },
   ];
 
   return (
@@ -61,20 +78,29 @@ const SignUpPage = () => {
         <Box>
           <Text fontSize="3xl">Welcome!</Text>
         </Box>
-        {logIn.map((item) => (
-          <Field label={item.type} required>
-            <Input placeholder={item.placeholder} size="lg" />
-          </Field>
-        ))}
-        {passLogin.map((item) => (
-          <Field label={item.type} required>
-            <PasswordInput placeholder={item.placeholder} size="lg" />
-          </Field>
-        ))}
-
-        <Button margin="5">
-          <Text>Sign up</Text>
-        </Button>
+        <form action="" onSubmit={handleSubmit(onSubmit)}>
+          {logIn.map((item, ind) => (
+            <Field label={item.type} required key={ind}>
+              <Input
+                placeholder={item.placeholder}
+                {...item.reactForm}
+                size="lg"
+              />
+            </Field>
+          ))}
+          {passLogin.map((item, ind) => (
+            <Field label={item.type} required key={ind}>
+              <PasswordInput
+                placeholder={item.placeholder}
+                size="lg"
+                {...item.reactForm}
+              />
+            </Field>
+          ))}
+          <Button margin="5">
+            <input type="submit" value="Sign un" />
+          </Button>
+        </form>
         <Text>
           Already have an account?{" "}
           <Link href="sign-in" variant="underline">
