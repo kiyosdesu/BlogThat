@@ -18,7 +18,7 @@ const router = createBrowserRouter([
       { path: "sign-in", element: <SignInPage /> },
       { path: "sign-up", element: <SignUpPage /> },
       { path: "blogs/:id", element: <BlogDetailsPage /> },
-      ,
+
       { path: "ga", element: <BlogDetailsSkeleton /> },
     ],
   },
