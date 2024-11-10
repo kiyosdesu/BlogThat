@@ -23,7 +23,7 @@ const BlogDetailsPage = () => {
       padding={{ base: "7", md: "0" }}
       marginY={{ base: "50vh", md: "40vh" }}
       // mt="130vh"
-      mt={{ base: "130vh", md: "100vh" }}
+      mt={{ base: "130vh", md: "100vh", lg: "40vh" }}
     >
       <Box>
         <Text fontWeight="medium">Category: {data?.category}</Text>
