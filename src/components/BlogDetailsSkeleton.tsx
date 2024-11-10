@@ -3,7 +3,15 @@ import { Skeleton, SkeletonCircle, SkeletonText } from "./ui/skeleton";
 
 const BlogDetailsSkeleton = () => {
   return (
-    <VStack width="50vw" alignItems="start" justify="center" gap="7">
+    <VStack
+      width={{ base: "70vw", md: "50vw" }}
+      alignItems="start"
+      justify="center"
+      gap={{ base: "3", md: "7" }}
+      padding={{ base: "7", md: "0" }}
+      marginY={{ base: "50vh", md: "40vh" }}
+      overflow="hidden"
+    >
       <Box width="10vw">
         <SkeletonText noOfLines={1} />
       </Box>
