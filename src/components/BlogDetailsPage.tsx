@@ -16,18 +16,20 @@ const BlogDetailsPage = () => {
 
   return (
     <Box
+      bg="red"
       display="flex"
       flexDirection="column"
-      gap="7"
+      gap={{ base: "3", md: "7" }}
       overflow="hidden"
-      padding={{ base: "7", md: "0" }}
+      padding={{ base: "7", md: "5" }}
       // marginTop={{ base: "50vh", md: "1vh" }}
       // mt="130vh"
+      mt="20vh"
     >
       <Box>
         <Text fontWeight="medium">Category: {data?.category}</Text>
       </Box>
-      <Text fontSize="5xl" fontWeight="extrabold">
+      <Text fontSize={{ base: "3xl", md: "5xl" }} fontWeight="extrabold">
         {data?.title}
       </Text>
       <Text fontWeight="light" fontSize="2xl">
