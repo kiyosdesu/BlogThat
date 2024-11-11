@@ -16,7 +16,6 @@ const BlogDetailsPage = () => {
 
   return (
     <Box
-      bg="red"
       display="flex"
       flexDirection="column"
       gap={{ base: "3", md: "7" }}
@@ -29,7 +28,7 @@ const BlogDetailsPage = () => {
       <Box>
         <Text fontWeight="medium">Category: {data?.category}</Text>
       </Box>
-      <Text fontSize={{ base: "3xl", md: "5xl" }} fontWeight="extrabold">
+      <Text fontSize={{ base: "3xl", md: "4xl" }} fontWeight="extrabold">
         {data?.title}
       </Text>
       <Text fontWeight="light" fontSize="2xl">

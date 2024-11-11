@@ -4,9 +4,13 @@ import useBlog from "./hooks/useBlog";
 import BlogsSkeleton from "./BlogsSkeleton";
 
 const BlogContainer = () => {
+  const skeleton = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
   const { data, isLoading } = useBlog();
 
-  if (isLoading) return <BlogsSkeleton />;
+  {
+    isLoading && skeleton.map((ske) => <BlogsSkeleton key={ske} />);
+  }
 
   return (
     <Box marginY="8vh">
