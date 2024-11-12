@@ -10,7 +10,7 @@ const SignUpPage = () => {
   const onSubmit = (data: FieldValues) => console.log(data);
 
   const { colorMode } = useColorMode();
-  const logIn = [
+  const logInField = [
     {
       type: "username",
       placeholder: "Username",
@@ -24,7 +24,7 @@ const SignUpPage = () => {
     },
   ];
 
-  const passLogin = [
+  const passLoginField = [
     {
       type: "password",
       placeholder: "password",
@@ -79,7 +79,7 @@ const SignUpPage = () => {
           <Text fontSize="3xl">Welcome!</Text>
         </Box>
         <form action="" onSubmit={handleSubmit(onSubmit)}>
-          {logIn.map((item, ind) => (
+          {logInField.map((item, ind) => (
             <Field label={item.type} required key={ind}>
               <Input
                 placeholder={item.placeholder}
@@ -88,7 +88,7 @@ const SignUpPage = () => {
               />
             </Field>
           ))}
-          {passLogin.map((item, ind) => (
+          {passLoginField.map((item, ind) => (
             <Field label={item.type} required key={ind}>
               <PasswordInput
                 placeholder={item.placeholder}
@@ -98,7 +98,7 @@ const SignUpPage = () => {
             </Field>
           ))}
           <Button margin="5">
-            <input type="submit" value="Sign un" />
+            <input type="submit" value="Sign u" />
           </Button>
         </form>
         <Text>
