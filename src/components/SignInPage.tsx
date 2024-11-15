@@ -4,34 +4,30 @@ import { PasswordInput } from "./ui/password-input";
 import { useColorMode } from "./ui/color-mode";
 import { IoMdClose } from "react-icons/io";
 import { useForm, FieldValues } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-
-const schema = z.object({
-  email: z.string().min(3),
-  password: z.string().min(8),
-});
-
-type FormData = z.infer<typeof schema>;
+import useSignIn from "./hooks/useSignIn";
 
 const SignInPage = () => {
-  const {
-    register,
-    handleSubmit,
-    // formState: { errors },
-  } = useForm<FormData>({
-    resolver: zodResolver(schema),
-  });
-
+  const { register, handleSubmit } = useForm();
   const onSubmit = (data: FieldValues) => console.log(data);
-
   const { colorMode } = useColorMode();
-  const logIn = [{ type: "email", placeholder: "Example@mail.com" }];
+  const sumbitHandler = useSignIn();
 
-  const passLogin = [
-    { type: "password", placeholder: "password" },
-    // { type: "confirm password", placeholder: "confirm password" },
+  const logIn = [
+    {
+      type: "username",
+      placeholder: "BlogThatUser",
+      reactForm: { ...register("username") },
+    },
   ];
+
+  const passwordLogIn = [
+    {
+      type: "password",
+      placeholder: "password",
+      reactForm: { ...register("password") },
+    },
+  ];
+
   return (
     <VStack
       minWidth="30vw"
@@ -40,13 +36,11 @@ const SignInPage = () => {
       marginY="10"
       justify="center"
       gap="7"
-      // padding="20"
       padding={{ sm: "10", md: "20" }}
       border={{
         sm: "",
         md: colorMode === "dark" ? "2px white solid" : "2px black solid",
       }}
-      // borderRadius="3xl"
       borderRadius={{ sm: "none", md: "3xl" }}
       bg={colorMode === "dark" ? "#18181b" : "#"}
     >
@@ -63,7 +57,7 @@ const SignInPage = () => {
           position="absolute"
           top="5"
           right="5"
-          cursor="pointer" // Optional: Add pointer cursor for interactivity
+          cursor="pointer"
           fontSize="3.5vh"
         >
           <Link href="/">
@@ -79,30 +73,28 @@ const SignInPage = () => {
               <Field label={item.type} required key={ind}>
                 <Input
                   placeholder={item.placeholder}
-                  {...register("email")}
                   size="lg"
+                  {...item.reactForm}
                 />
               </Field>
             ))}
-            {passLogin.map((item, ind) => (
+            {passwordLogIn.map((item, ind) => (
               <Field label={item.type} required key={ind}>
                 <PasswordInput
                   placeholder={item.placeholder}
-                  {...register("password")}
                   size="lg"
+                  {...item.reactForm}
                 />
-                <Text color="red" fontVariant="common-ligatures">
-                  password must be atleast 8 characters
-                </Text>
               </Field>
             ))}
+
             <Button margin="5">
-              <input type="submit" value="Sign in" />
+              <input type="submit " value="Sign in" />
             </Button>
           </VStack>
         </form>
         <Text>
-          Dont have an account?{" "}
+          Don’t have an account?{" "}
           <Link href="/sign-up" variant="underline">
             <Span color="blue">Sign up</Span>
           </Link>

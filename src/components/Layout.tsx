@@ -1,9 +1,16 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
+import { useSessionContext } from "@/context/SessionContext";
 
 const Layout = () => {
+  const session = useSessionContext() || {};
   const location = useLocation();
+
+  // if (!session) return <Text>loading</Text>;
+
+  // if (session.isLoading) return <Text>loading</Text>;
+
   return (
     <Box>
       <Box hideFrom="md">
