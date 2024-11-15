@@ -1,7 +1,7 @@
 import fetcher from "@/util/fetcher";
 import { useMutation } from "@tanstack/react-query";
 
-interface SignUpData {
+export interface SignUpData {
   email: string;
   username: string;
   password: string;

@@ -3,11 +3,18 @@ import { Field } from "@/components/ui/field";
 import { PasswordInput } from "./ui/password-input";
 import { useColorMode } from "./ui/color-mode";
 import { IoMdClose } from "react-icons/io";
-import { useForm, FieldValues } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import useSignUp, { SignUpData } from "./hooks/useSignUp";
 
 const SignUpPage = () => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data: FieldValues) => console.log(data);
+  const { register, handleSubmit, reset } = useForm<SignUpData>();
+  const onSubmit = (data: SignUpData) => {
+    mutate(data);
+
+    reset();
+  };
+
+  const { isPending, mutate } = useSignUp();
 
   const { colorMode } = useColorMode();
   const logInField = [
@@ -36,6 +43,8 @@ const SignUpPage = () => {
       reactForm: { ...register("confirmPassword") },
     },
   ];
+
+  if (isPending) return <Text>Loading...</Text>;
 
   return (
     <VStack
@@ -98,7 +107,7 @@ const SignUpPage = () => {
             </Field>
           ))}
           <Button margin="5">
-            <input type="button" value="Sign u" />
+            <input type="submit" value="Sign u" />
           </Button>
         </form>
         <Text>
