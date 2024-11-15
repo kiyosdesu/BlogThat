@@ -10,7 +10,7 @@ const SignInPage = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data: FieldValues) => console.log(data);
   const { colorMode } = useColorMode();
-  const sumbitHandler = useSignIn();
+  const sumbitHandler = useSignIn;
 
   const logIn = [
     {
