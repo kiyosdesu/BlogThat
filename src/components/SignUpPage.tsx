@@ -98,13 +98,13 @@ const SignUpPage = () => {
             </Field>
           ))}
           <Button margin="5">
-            <input type="submit" value="Sign u" />
+            <input type="button" value="Sign u" />
           </Button>
         </form>
         <Text>
           Already have an account?{" "}
           <Link href="sign-in" variant="underline">
-            <Span color="blue">Sign in</Span>
+            <Span color="blue">Sign up</Span>
           </Link>
         </Text>
       </VStack>

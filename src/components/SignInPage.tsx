@@ -3,14 +3,21 @@ import { Field } from "@/components/ui/field";
 import { PasswordInput } from "./ui/password-input";
 import { useColorMode } from "./ui/color-mode";
 import { IoMdClose } from "react-icons/io";
-import { useForm, FieldValues } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import useSignIn from "./hooks/useSignIn";
 
+interface SignUpData {
+  username: string;
+  password: string;
+}
+
 const SignInPage = () => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data: FieldValues) => console.log(data);
+  const { register, handleSubmit } = useForm<SignUpData>();
+  const onSubmit = (data: SignUpData) => {
+    mutate(data); // Directly pass the form data
+  };
   const { colorMode } = useColorMode();
-  const sumbitHandler = useSignIn;
+  const { mutate, isPending } = useSignIn();
 
   const logIn = [
     {
@@ -28,6 +35,8 @@ const SignInPage = () => {
     },
   ];
 
+  if (isPending) return <Text>signing in</Text>;
+
   return (
     <VStack
       minWidth="30vw"
@@ -36,11 +45,13 @@ const SignInPage = () => {
       marginY="10"
       justify="center"
       gap="7"
+      // padding="20"
       padding={{ sm: "10", md: "20" }}
       border={{
         sm: "",
         md: colorMode === "dark" ? "2px white solid" : "2px black solid",
       }}
+      // borderRadius="3xl"
       borderRadius={{ sm: "none", md: "3xl" }}
       bg={colorMode === "dark" ? "#18181b" : "#"}
     >
@@ -57,45 +68,42 @@ const SignInPage = () => {
           position="absolute"
           top="5"
           right="5"
-          cursor="pointer"
+          cursor="pointer" // Optional: Add pointer cursor for interactivity
           fontSize="3.5vh"
         >
           <Link href="/">
             <IoMdClose />
           </Link>
         </Box>
-        <Box position="relative" top="-10">
-          <Text fontSize="3xl">Welcome back!</Text>
+        <Box>
+          <Text fontSize="3xl">Welcome!</Text>
         </Box>
         <form action="" onSubmit={handleSubmit(onSubmit)}>
-          <VStack>
-            {logIn.map((item, ind) => (
-              <Field label={item.type} required key={ind}>
-                <Input
-                  placeholder={item.placeholder}
-                  size="lg"
-                  {...item.reactForm}
-                />
-              </Field>
-            ))}
-            {passwordLogIn.map((item, ind) => (
-              <Field label={item.type} required key={ind}>
-                <PasswordInput
-                  placeholder={item.placeholder}
-                  size="lg"
-                  {...item.reactForm}
-                />
-              </Field>
-            ))}
-
-            <Button margin="5">
-              <input type="submit " value="Sign in" />
-            </Button>
-          </VStack>
+          {logIn.map((item, ind) => (
+            <Field label={item.type} required key={ind}>
+              <Input
+                placeholder={item.placeholder}
+                {...item.reactForm}
+                size="lg"
+              />
+            </Field>
+          ))}
+          {passwordLogIn.map((item, ind) => (
+            <Field label={item.type} required key={ind}>
+              <PasswordInput
+                placeholder={item.placeholder}
+                size="lg"
+                {...item.reactForm}
+              />
+            </Field>
+          ))}
+          <Button margin="5">
+            <input type="submit" value="Sign u" />
+          </Button>
         </form>
         <Text>
-          Don’t have an account?{" "}
-          <Link href="/sign-up" variant="underline">
+          Dont have an account yet?{" "}
+          <Link href="sign-up" variant="underline">
             <Span color="blue">Sign up</Span>
           </Link>
         </Text>
