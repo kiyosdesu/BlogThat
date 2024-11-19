@@ -7,9 +7,9 @@ const Layout = () => {
   const session = useSessionContext() || {};
   const location = useLocation();
 
-  // if (!session) return <Text>loading</Text>;
+  if (!session) return <Text>loading</Text>;
 
-  // if (session.isLoading) return <Text>loading</Text>;
+  // if (session) return <Text>loading</Text>;
 
   return (
     <Box>
