@@ -10,6 +10,8 @@ export const SessionProvider = ({
 }) => {
   const session = useSession();
 
+  // hi
+
   return (
     <SessionContext.Provider value={session}>
       {children}
