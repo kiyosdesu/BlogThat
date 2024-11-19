@@ -9,6 +9,7 @@ import { Provider } from "@/components/ui/provider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { SessionProvider } from "./context/SessionContext.tsx";
+// import { SessionProvider } from "./context/SessionContext.tsx";
 
 const queryClient = new QueryClient();
 
