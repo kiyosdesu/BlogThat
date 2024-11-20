@@ -11,6 +11,7 @@ const NavItems = () => {
       display="flex"
       gap={{ base: "5", md: "7" }}
       flexDirection={{ base: "column", md: "row" }}
+      alignItems={{ base: "none", md: "center" }}
     >
       {navItems.map((items) => (
         <Link
@@ -31,6 +32,9 @@ const NavItems = () => {
           </Text>
         </Link>
       ))}
+      {/* <Link to={"/userSettings"}>
+        <UserAvatar />
+      </Link> */}
     </Box>
   );
 };

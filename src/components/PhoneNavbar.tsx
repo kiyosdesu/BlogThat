@@ -17,6 +17,8 @@ import NavItems from "./NavItems";
 import { useColorMode } from "./ui/color-mode";
 import ColorModeSwitch from "./ColorModeSwitch";
 import { FaHamburger } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import UserAvatar from "./UserAvatar";
 
 const PhoneNavbar = () => {
   const { onClose } = useDisclosure();
@@ -49,6 +51,9 @@ const PhoneNavbar = () => {
               <DrawerHeader>
                 <DrawerTitle display="flex" gap="5">
                   <TItle />
+                  <Link to={"/userSettings"}>
+                    <UserAvatar />
+                  </Link>
                   <ColorModeSwitch />
                 </DrawerTitle>
               </DrawerHeader>
