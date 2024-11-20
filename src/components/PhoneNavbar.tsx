@@ -44,13 +44,17 @@ const PhoneNavbar = () => {
             <DrawerBackdrop />
             <DrawerTrigger asChild>
               {/* <Button variant="outline" size="sm"> */}
-              <FaHamburger />
+              <Box padding="5">
+                <FaHamburger />
+              </Box>
               {/* </Button> */}
             </DrawerTrigger>
             <DrawerContent>
               <DrawerHeader>
                 <DrawerTitle display="flex" gap="5">
                   <TItle />
+
+                  <Box onClick={onClose}></Box>
                   <Link to={"/userSettings"}>
                     <UserAvatar />
                   </Link>

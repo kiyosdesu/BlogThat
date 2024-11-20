@@ -1,4 +1,4 @@
-import { Text, Stack, HStack, VStack } from "@chakra-ui/react";
+import { Text, Stack, HStack, VStack, Button } from "@chakra-ui/react";
 
 const UserSettingsPage = () => {
   const settings = [
@@ -8,7 +8,7 @@ const UserSettingsPage = () => {
 
   return (
     <VStack height="80vh" gap="10vh" width="98vw">
-      <Text fontSize="4xl" ml="16vh" alignSelf="start">
+      <Text fontSize="4xl" ml={{ base: "10vh", md: "40vh" }} alignSelf="start">
         Settings
       </Text>
       <Stack gap={{ base: "5vh", md: "20vh" }} flexWrap="wrap">
@@ -17,7 +17,9 @@ const UserSettingsPage = () => {
             <Text alignSelf="start" fontSize="2xl">
               {set.type}
             </Text>
-            <Text fontSize="2xl">{set.act}</Text>
+            <Button variant="ghost">
+              <Text fontSize="2xl">{set.act}</Text>
+            </Button>
           </HStack>
         ))}
       </Stack>
