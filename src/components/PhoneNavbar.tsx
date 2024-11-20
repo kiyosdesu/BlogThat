@@ -53,11 +53,11 @@ const PhoneNavbar = () => {
               <DrawerHeader>
                 <DrawerTitle display="flex" gap="5">
                   <TItle />
-
-                  <Box onClick={onClose}></Box>
-                  <Link to={"/userSettings"}>
-                    <UserAvatar />
-                  </Link>
+                  <DrawerActionTrigger asChild>
+                    <Link to={"/userSettings"}>
+                      <UserAvatar />
+                    </Link>
+                  </DrawerActionTrigger>
                   <ColorModeSwitch />
                 </DrawerTitle>
               </DrawerHeader>
