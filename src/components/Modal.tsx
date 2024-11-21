@@ -10,25 +10,31 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Input } from "@chakra-ui/react";
+import { Input, Text } from "@chakra-ui/react";
 import { useState } from "react";
 
 interface Prop {
-  username: string | JSX.Element;
+  username: JSX.Element;
 }
 
 const Modal = ({ username }: Prop) => {
   const [open, setOpen] = useState(false);
   return (
-    <DialogRoot lazyMount open={open} onOpenChange={(e) => setOpen(e.open)}>
+    <DialogRoot
+      lazyMount
+      open={open}
+      onOpenChange={(e) => setOpen(e.open)}
+      placement="center"
+    >
       <DialogTrigger asChild>
         <Button variant="outline">{username}</Button>
       </DialogTrigger>
 
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Dialog Title</DialogTitle>
+          <DialogTitle>User settings</DialogTitle>
         </DialogHeader>
+        <Text></Text>
         <DialogBody>
           <Input type="text" />
         </DialogBody>
