@@ -1,4 +1,5 @@
 import { Text, Stack, HStack, VStack, Button } from "@chakra-ui/react";
+import Modal from "./Modal";
 
 const UserSettingsPage = () => {
   const settings = [
@@ -18,7 +19,7 @@ const UserSettingsPage = () => {
               {set.type}
             </Text>
             <Button variant="ghost">
-              <Text fontSize="2xl">{set.act}</Text>
+              <Modal username={<Text fontSize="2xl">{set.act}</Text>} />
             </Button>
           </HStack>
         ))}
